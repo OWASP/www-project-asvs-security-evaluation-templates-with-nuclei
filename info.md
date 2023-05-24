@@ -1,13 +1,11 @@
 ### ASVS Security Evaluation Templates with Nuclei Information
 * [Incubator Project](#)
-* [Type of Project](#)
 * [Version 0.0.0](#)
-* [Builder](#)
+* [Defender](#)
 * [Breaker](#)
 
-### Downloads or Social Links
-* [Download](#)
-* [Meetup](#)
+### Community
+* [Slack Channel](https://owasp.slack.com/archives/C052939BZ43)
 
 ### Code Repository
 * [repo](#)
