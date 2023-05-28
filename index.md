@@ -23,7 +23,7 @@ type: code, tool, documentation, or other
 
 
 
-## header H2
+## Licensing
 [](https://img.shields.io/github/license/cont/https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei)
 
 This program is free software: You can redistribute it and/or modify it under the terms of the MIT License.
