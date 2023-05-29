@@ -24,6 +24,6 @@ type: code, tool, documentation, or other
 
 
 ## Licensing
-[](https://img.shields.io/github/license/cont/https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei)
+[![alt-text](https://img.shields.io/github/license/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei)](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/main/LICENSE)
 
 This program is free software: You can redistribute it and/or modify it under the terms of the MIT License.
