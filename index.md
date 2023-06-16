@@ -2,26 +2,16 @@
 
 layout: col-sidebar
 title: OWASP ASVS Security Evaluation Templates with Nuclei
-tags: example-tag
+tags: asvs-security-evaluation-templates-with-nuclei nuclei nuclei-templates asvs asvs-evaluation PoC-generator vulnerablity 
 level: 2
-type: 
-pitch: A very brief, one-line description of your project
+type: tool
+pitch: This project aims to develop nuclei templates for evaluating OWASP Application Security Verification Standard (ASVS) on websites.
 
 ---
 
-This is an example of a Project or Chapter Page.  Please change these items to indicate the actual information you wish to present.  In addition to this information, the 'front-matter' above this text should be modified to reflect your actual information.  An explanation of each of the front-matter items is below:
+This project aims to develop nuclei templates for evaluating OWASP Application Security Verification Standard (ASVS) on websites and will involve creating templates that can be used to evaluate ASVS on websites, documenting the use of the templates, and designing and implementing a user interface for easy navigation and use of the templates. The templates and user interface will be tested for accuracy and usability, and once finalized, they will be made available for use. User feedback and usage of the templates and user interface will be monitored and analyzed, and updates will be made to the templates and user interface based on this feedback and usage. Finally, the project will be documented for future reference.
 
-layout: This is the layout used by project and chapter pages.  You should leave this value as col-sidebar
-
-title: This is the title of your project or chapter page, usually the name.  For example, OWASP Zed Attack Proxy or OWASP Baltimore
-
-tags: This is a space-delimited list of tags you associate with your project or chapter.  If you are using tabs, at least one of these tags should be unique in order to be used in the tabs files (an example tab is included in this repo) 
-
-level: For projects, this is your project level (2 - Incubator, 3 - Lab, 3.5 - Production, 4 - Flagship)
-
-type: code, tool, documentation, or other
-
-
+It's important to note that Since the implementation methods and frameworks used in web application design are very diverse, in this project, we will consider the existing best practice designs and develop nuclei templates based on them.
 
 ## Licensing
 [![alt-text](https://img.shields.io/github/license/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei)](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/main/LICENSE)
