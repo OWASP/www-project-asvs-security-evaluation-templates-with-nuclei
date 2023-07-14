@@ -23,7 +23,6 @@ For detailed information and guidelines about contributing in developing templat
 #### Core Team
 The project current core team are:
 - [Hamed Salimain](https://github.com/Snbig)  (Project Leader)
-- [Mohammad Khodaiemehr](https://github.com/m0khd) 
 - [Amin Naserinia](https://github.com/aminnaseri)
 - [Reza Saeedi](https://github.com/Reza-saeedi)
 - [Dorna Azhirak](https://github.com/nameddorna)
