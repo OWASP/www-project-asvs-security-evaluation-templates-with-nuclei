@@ -25,5 +25,4 @@ The project current core team are:
 - [Hamed Salimain](https://github.com/Snbig)  (Project Leader)
 - [Amin Naserinia](https://github.com/aminnaseri)
 - [Reza Saeedi](https://github.com/Reza-saeedi)
-- [Dorna Azhirak](https://github.com/nameddorna)
 
