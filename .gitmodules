@@ -1,0 +1,4 @@
+[submodule "Vulnerable-Pages"]
+	path = Vulnerable-Pages
+	url = https://github.com/Snbig/Vulnerable-Pages
+	branch = dev
