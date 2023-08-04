@@ -25,7 +25,6 @@ ssl:
 
     extractors:
       - type: json
-        name : test
         json:
           - " .tls_version"
 
@@ -35,7 +34,6 @@ ssl:
 
     extractors:
       - type: json
-        name : test
         json:
           - " .tls_version"
 
@@ -45,6 +43,5 @@ ssl:
 
     extractors:
       - type: json
-        name : test
         json:
           - " .tls_version"
