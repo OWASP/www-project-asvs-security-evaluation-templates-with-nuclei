@@ -35,7 +35,7 @@ http:
       - type: regex
         part: header
         regex:
-        - "(PUT|DELETE|TRACE|PATCH|CONNECT)"
+          - "(PUT|DELETE|TRACE|PATCH|CONNECT)"
 
   - raw:
       - |
@@ -70,7 +70,7 @@ http:
           - 501
       - type: dsl
         dsl:
-        - "(status_code < 210 && status_code >= 200) && (rand_resp != status_code)"
+          - "(status_code < 210 && status_code >= 200) && (rand_resp != status_code)"
 
   - method: DELETE
     path:
@@ -93,8 +93,8 @@ http:
       - type: dsl
         negative: true
         dsl:
-        - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
-          
+          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
+  
   - method: TRACE
     path:
       - "{{BaseURL}}"
@@ -116,7 +116,7 @@ http:
       - type: dsl
         negative: true
         dsl:
-        - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
+          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
       - type: regex
         part: body
         regex:
@@ -144,7 +144,7 @@ http:
       - type: dsl
         negative: true
         dsl:
-        - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
+          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
 
   - method: CONNECT
     path:
@@ -167,5 +167,4 @@ http:
       - type: dsl
         negative: true
         dsl:
-        - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
-        
+          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
