@@ -1,6 +1,7 @@
 name: 🛠 Template Validate
 
 on:
+  push:
   pull_request:
     paths:
       - '**.yaml'
