@@ -94,7 +94,7 @@ http:
         negative: true
         dsl:
           - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
-  
+
   - method: TRACE
     path:
       - "{{BaseURL}}"
