@@ -1,0 +1,30 @@
+id: ASVS-4.0.3-V14.4.1
+
+info:
+  name: ASVS 14.4.1 Check
+  author: Hamed Salimian
+  severity: low
+  classification:
+    cwe-id: CWE-173
+  reference:
+    - https://github.com/BlazingWind/OWASP-ASVS-4.0-testing-guide/blob/main/14-Configuration/14-4-1-Charset.md
+  tags: asvs,14.4.1
+  description: |
+    Verify that every HTTP response contains a Content-Type header. Also specify a safe character set (e.g., UTF-8, ISO-8859-1) if the content types are text/*, /+xml and application/xml. Content must match with the provided Content-Type header.
+    
+http:
+  - raw:
+      - |
+        GET {{Path}} HTTP/1.1
+        Host: {{Hostname}}
+        Origin: {{BaseURL}}
+        Connection: close
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+        Accept: */*
+
+    extractors:
+      - type: kval
+        name: "Content-Type"
+        part: header
+        kval:
+            - Content_Type
