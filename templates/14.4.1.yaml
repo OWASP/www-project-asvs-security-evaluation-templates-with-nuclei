@@ -36,7 +36,7 @@ http:
         regex:
           - (?i)<\?xml\s+version\s*=\s*["'][0-9.]*["']\s+encoding\s*=\s*["'](utf-?8|utf-?16|iso-?8859-?1)["']\s*\?>
         part: body
-        
+
     matchers-condition: and
     stop-at-first-match: true
     matchers:
