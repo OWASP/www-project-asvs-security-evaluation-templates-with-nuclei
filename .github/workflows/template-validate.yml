@@ -25,4 +25,5 @@ jobs:
 
       - name: Template Validation
         run: |
-          nuclei -duc -validate -allow-local-file-access -t ${{ github.workspace }}/templates
+          cp -r ${{ github.workspace }}/templates /home/runner/nuclei-templates
+          nuclei -duc -validate -allow-local-file-access
