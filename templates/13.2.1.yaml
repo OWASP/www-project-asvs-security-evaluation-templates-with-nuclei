@@ -1,4 +1,4 @@
-id: asvs_13_2_1
+id: ASVS-4.0.3-V13.2.1
 
 info:
   name: ASVS 13.2.1 Check
@@ -7,7 +7,7 @@ info:
   classification:
     cwe-id: CWE-650
   reference:
-    - https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods
     - https://nmap.org/nsedoc/scripts/http-methods.html
   tags: asvs,13.2.1
   description: |
