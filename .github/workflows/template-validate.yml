@@ -27,4 +27,3 @@ jobs:
         run: |
           cp -r ${{ github.workspace }} $HOME
           nuclei -duc -validate -allow-local-file-access
-          nuclei -duc -validate -w ./workflows -allow-local-file-access
