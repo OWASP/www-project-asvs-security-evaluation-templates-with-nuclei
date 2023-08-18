@@ -11,7 +11,6 @@ info:
   tags: asvs,14.4.1
   description: |
     Verify that every HTTP response contains a Content-Type header. Also specify a safe character set (e.g., UTF-8, ISO-8859-1) if the content types are text/*, /+xml and application/xml. Content must match with the provided Content-Type header.
-    
 http:
   - raw:
       - |
@@ -26,7 +25,7 @@ http:
         name: "Content-Type"
         part: header
         kval:
-            - Content_Type
+          - Content_Type
       - type: regex
         name: "HTML meta charset"
         regex:
