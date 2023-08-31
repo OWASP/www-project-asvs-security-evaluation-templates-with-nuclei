@@ -12,7 +12,7 @@ info:
   tags: asvs,14.4.2
   description: |
     Verify that all API responses contain a Content-Disposition: attachment; filename="api.json" header (or other appropriate filename for the content type).
-    
+
 http:
   - raw:
       - |
@@ -27,4 +27,3 @@ http:
         name: '"Content-Disposition: attachment; filename=" header does not exist.'
         dsl:
           - '!contains(header, "Content-Disposition: attachment; filename=")'
-    
