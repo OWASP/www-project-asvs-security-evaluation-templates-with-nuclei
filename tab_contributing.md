@@ -15,5 +15,4 @@ For detailed information and guidelines about contributing in "ASVS evaluation t
 ### Core Team
 The project current core team are:
 - [Hamed Salimain](https://github.com/Snbig)  (Project Leader)
-- [Amin Naserinia](https://github.com/aminnaseri)
 - [Reza Saeedi](https://github.com/Reza-saeedi)
