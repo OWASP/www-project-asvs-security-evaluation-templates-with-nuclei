@@ -35,4 +35,4 @@ http:
         part: body
         negative: true
         regex:
-         - (?i)<meta\s+http-equiv\s*=\s*["'](Content-Security-Policy|Content-Security-Policy-Report-Only)["'].*\/?>
+          - (?i)<meta\s+http-equiv\s*=\s*["'](Content-Security-Policy|Content-Security-Policy-Report-Only)["'].*\/?>
