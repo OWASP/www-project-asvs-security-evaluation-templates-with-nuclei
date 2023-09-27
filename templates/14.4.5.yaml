@@ -31,13 +31,13 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
-        name: 'Strict-Transport-Security (HSTS) header does not exist.'
+        name: "'Strict-Transport-Security' (HSTS) header does not exist."
         part: header
         negative: true
         words:
           - 'Strict-Transport-Security:'
       - type: regex
-        name: "Strict-Transport-Security (HSTS) header does not include subdomains."
+        name: "'Strict-Transport-Security' (HSTS) header does not include subdomains."
         negative: true
         regex:
           - (?i)Strict-Transport-Security:\s*.*\bincludeSubdomains\b
