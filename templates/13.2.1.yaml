@@ -3,7 +3,7 @@ id: ASVS-4-0-3-V13-2-1
 info:
   name: ASVS 13.2.1 Check
   author: Hamed Salimian
-  severity: high
+  severity: medium
   classification:
     cwe-id: CWE-650
   reference:
