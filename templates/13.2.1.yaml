@@ -21,33 +21,21 @@ http:
       Host: "{{Hostname}}"
       Cookie: "{{Cookie}}"
     extractors:
+      - type: kval
+        part: header
+        kval:
+          - Access_Control_Allow_Methods
+      - type: kval
+        part: header
+        kval:
+          - Allow
+    matchers:
       - type: regex
         name: "potentially risky methods (OPTIONS check)"
         part: header
         regex:
-          - "(PUT|DELETE|TRACE|PATCH|CONNECT)"
-      - type: kval
-        name: "Access-Control-Allow-Methods"
-        part: header
-        kval:
-          - Access_Control_Allow_Methods
-    matchers:
-      - type: regex
-        part: header
-        regex:
-          - "(PUT|DELETE|TRACE|PATCH|CONNECT)"
-
-  - raw:
-      - |
-        {{to_upper(rand_text_alpha(4))}} {{Path}} HTTP/1.1
-        Host: {{Hostname}}
-        Cookie: {{Cookie}}
-    extractors:
-      - type: dsl
-        internal: true
-        name: rand_resp
-        dsl:
-          - status_code
+          - (?i)Access-Control-Allow-Methods:\s*.*\b(PUT|DELETE)\b
+          - (?i)Allow:\s*.*\b(PUT|DELETE)\b
 
   - method: PUT
     path:
@@ -58,19 +46,15 @@ http:
     body: "<html>HTTP PUT Method is Enabled</html>"
     extractors:
       - type: dsl
-        name: "PUT method is Enabled"
         dsl:
           - status_code
-    matchers-condition: and
     matchers:
       - type: status
+        name: "PUT method is Enabled"
         negative: true
         status:
           - 405
           - 501
-      - type: dsl
-        dsl:
-          - "(status_code < 210 && status_code >= 200) && (rand_resp != status_code)"
 
   - method: DELETE
     path:
@@ -80,91 +64,12 @@ http:
       Cookie: "{{Cookie}}"
     extractors:
       - type: dsl
+        dsl:
+          - status_code
+    matchers:
+      - type: status
         name: "DELETE method is Enabled"
-        dsl:
-          - status_code
-    matchers-condition: and
-    matchers:
-      - type: status
         negative: true
         status:
           - 405
           - 501
-      - type: dsl
-        negative: true
-        dsl:
-          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
-
-  - method: TRACE
-    path:
-      - "{{BaseURL}}"
-    headers:
-      Host: "{{Hostname}}"
-      Cookie: "{{Cookie}}"
-    extractors:
-      - type: dsl
-        name: "TRACE method is Enabled"
-        dsl:
-          - status_code
-    matchers-condition: and
-    matchers:
-      - type: status
-        negative: true
-        status:
-          - 405
-          - 501
-      - type: dsl
-        negative: true
-        dsl:
-          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
-      - type: regex
-        part: body
-        regex:
-          - '^TRACE \S+ HTTP\/[0-9]\.[0-9]'
-
-  - method: PATCH
-    path:
-      - "{{BaseURL}}"
-    headers:
-      Host: "{{Hostname}}"
-      Cookie: "{{Cookie}}"
-    body: "<patch request data>"
-    extractors:
-      - type: dsl
-        name: "PATCH method is Enabled"
-        dsl:
-          - status_code
-    matchers-condition: and
-    matchers:
-      - type: status
-        negative: true
-        status:
-          - 405
-          - 501
-      - type: dsl
-        negative: true
-        dsl:
-          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
-
-  - method: CONNECT
-    path:
-      - "{{BaseURL}}"
-    headers:
-      Host: "{{Hostname}}"
-      Cookie: "{{Cookie}}"
-    extractors:
-      - type: dsl
-        name: "CONNECT method is Enabled"
-        dsl:
-          - status_code
-    matchers-condition: and
-    matchers:
-      - type: status
-        negative: true
-        status:
-          - 405
-          - 501
-      - type: dsl
-        negative: true
-        dsl:
-          - "(status_code < 600 && status_code >= 400) || (rand_resp == status_code)"
