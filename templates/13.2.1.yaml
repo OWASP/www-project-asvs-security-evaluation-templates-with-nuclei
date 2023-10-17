@@ -55,6 +55,8 @@ http:
         status:
           - 405
           - 501
+          - 400
+          - 404
 
   - method: DELETE
     path:
@@ -73,3 +75,5 @@ http:
         status:
           - 405
           - 501
+          - 400
+          - 404
