@@ -30,6 +30,8 @@ http:
         status:
           - 405
           - 501
+          - 404
+          - 400
       - type: regex
         part: body
         regex:
@@ -46,3 +48,5 @@ http:
         status:
           - 405
           - 501
+          - 404
+          - 400
