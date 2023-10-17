@@ -3,7 +3,7 @@ id: ASVS-4-0-3-V14-5-1
 info:
   name: ASVS 14.5.1 Check
   author: Hamed Salimian
-  severity: medium
+  severity: low
   classification:
     cwe-id: CWE-749
   reference:
