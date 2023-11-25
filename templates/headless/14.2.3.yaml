@@ -37,15 +37,15 @@ headless:
                       var node = matchingNodes.snapshotItem(i);
                       matchingTagsAsString.push(new XMLSerializer().serializeToString(node));
                   }
-                  return matchingTagsAsString.join('');
+                  return matchingTagsAsString.join('|');
             }
 
     extractors:
-      - type: kval
-        kval:
-          - assets_with_external_fqdn
+      - type: dsl
+        dsl:
+          - trim(split(assets_with_external_fqdn, '|'), '[]')
 
     matchers:
       - type: dsl
         dsl:
-          - len(assets_with_external_fqdn) > 0
+          - len(trim(split(assets_with_external_fqdn, '|'), '[]')) > 0
