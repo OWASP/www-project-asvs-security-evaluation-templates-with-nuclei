@@ -25,7 +25,7 @@ http:
       Host: "{{Hostname}}"
       Content-type: "application/xml"
     body: "{{valid_xml}}"
-  
+
   - method: POST
     path:
       - "{{BaseURL}}"
@@ -39,7 +39,7 @@ http:
         name: "Valid xml submission status code"
         dsl:
           - http_1_status_code
-      
+
       - type: dsl
         name: "Invalid xml submission status code"
         dsl:
