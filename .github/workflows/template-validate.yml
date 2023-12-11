@@ -27,4 +27,4 @@ jobs:
         run: |
           cp -r ${{ github.workspace }}/templates /home/runner/nuclei-templates
           nuclei -duc -validate -allow-local-file-access
-          nuclei -duc -validate -w nuclei-templates/workflows -allow-local-file-access
+          nuclei -duc -validate -w ./workflows -allow-local-file-access
