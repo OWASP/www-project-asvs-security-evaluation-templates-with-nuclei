@@ -34,10 +34,10 @@ code:
       num_files = os.getenv('num-files')
       compressed_size = os.getenv('compressed-size')
       subprocess.run([sys.executable, "code/source/zipbomb.py", f"--mode={mode}", f"--num-files={num_files}", f"--compressed-size={compressed_size}"])
-    
+
 http:
   - raw:
-    - |
+      - |
         POST {{BaseURL}} HTTP/1.1
         Host: {{Hostname}}
         Accept: */*
@@ -56,4 +56,4 @@ http:
         status:
           - 500
           - 503
-# digest: 4b0a00483046022100c965e8aa990ee25114f7e6ee8d12409719404e286ff49c879f842302a18eda14022100a35665298c4e11bdca2517f18b667064a19dfa3657a292f5fd58fb92a594b1b9:99354b7c2d97285abe7401b783fba350
+# digest: 490a0046304402203b8787953e9fa8a0e551fc309787addc534c07c2b32f3665f6b307fb8e4cc28802206af2bc67ad42c54ee002eb47b45765e2417ac7bc1ee88414ac0c5c8352bacec1:99354b7c2d97285abe7401b783fba350
