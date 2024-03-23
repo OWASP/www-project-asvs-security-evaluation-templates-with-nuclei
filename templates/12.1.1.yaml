@@ -36,7 +36,7 @@ http:
         {{rand_text_alpha({{small_file_size}})}}
         ------WebKitFormBoundaryiugABg7zoMAxIKId--
 
-    - |
+      - |
         POST {{BaseURL}} HTTP/1.1
         Host: {{Hostname}}
         Accept: */*
