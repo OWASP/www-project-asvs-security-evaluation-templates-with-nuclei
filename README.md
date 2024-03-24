@@ -1,3 +1,8 @@
+[![❄️ YAML Lint](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/syntax-checking.yml/badge.svg)](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/syntax-checking.yml)
+[![🛠 Template Validate](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/template-validate.yml/badge.svg)](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/template-validate.yml)
+[![Vulnerable Pages](https://img.shields.io/website?labelColor=3D444C&link=https%3A%2F%2Fsnbig.github.io%2FVulnerable-Pages%2F&label=Vulnerable%20Pages&url=https%3A%2F%2Fsnbig.github.io%2FVulnerable-Pages%2F)](https://snbig.github.io/Vulnerable-Pages/)
+
+
 # OWASP ASVS Security Evaluation Templates with Nuclei
 
 
