@@ -1,6 +1,6 @@
 [![❄️ YAML Lint](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/syntax-checking.yml/badge.svg)](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/syntax-checking.yml)
 [![🛠 Template Validate](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/template-validate.yml/badge.svg)](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/template-validate.yml)
-[![Vulnerable Pages](https://img.shields.io/website?labelColor=3D444C&link=https://spotless-frog-wetsuit.cyclic.cloud/&label=%F0%9F%8E%AFVulnerable%20Pages&url=https://spotless-frog-wetsuit.cyclic.cloud/)](https://spotless-frog-wetsuit.cyclic.cloud/)
+[![Vulnerable Pages](https://img.shields.io/website?labelColor=3D444C&link=https://vulnerable-pages.onrender.com/&label=%F0%9F%8E%AFVulnerable%20Pages&url=https://vulnerable-pages.onrender.com/)](https://vulnerable-pages.onrender.com/)
 
 
 # OWASP ASVS Security Evaluation Templates with Nuclei
