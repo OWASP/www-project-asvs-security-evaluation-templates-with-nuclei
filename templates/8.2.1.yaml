@@ -16,11 +16,58 @@ info:
 http:
   - method: GET
     path:
-      - "{{BaseURL}}"
+      - "{{BaseURL}}{{sensitive_path}}"
+    payloads:
+      sensitive_path:
+        - "/"
+        - "/login"
+        - "/logout"
+        - "/register"
+        - "/dashboard"
+        - "/profile"
+        - "/settings"
+        - "/account"
+        - "/admin"
+        - "/user"
+        - "/users"
+        - "/search"
+        - "/messages"
+        - "/notifications"
+        - "/help"
+        - "/support"
+        - "/contact"
+        - "/about"
+        - "/privacy"
+        - "/terms"
+        - "/docs"
+        - "/api"
+        - "/api/v1"
+        - "/api/v2"
+        - "/home"
+        - "/welcome"
+        - "/password-reset"
+        - "/forgot-password"
+        - "/update-profile"
+        - "/billing"
+        - "/invoices"
+        - "/orders"
+        - "/cart"
+        - "/checkout"
+        - "/confirmation"
+        - "/history"
+        - "/activities"
 
+    matchers-condition: and
+    stop-at-first-match: true
     matchers:
       - type: regex
         part: header
         regex:
           - '(?i)cache-control:.*no-store'
         negative: true
+
+      - type: status
+        status:
+          - 200
+          - 301
+          - 302
