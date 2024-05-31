@@ -24,10 +24,3 @@ http:
         regex:
           - '(?i)cache-control:.*no-store'
         negative: true
-
-      - type: Word
-        part: header
-        words:
-          - "Last-Modified"
-          - "Expires"
-          - "Pragma"
