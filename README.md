@@ -2,8 +2,9 @@
 [![🛠 Template Validate](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/template-validate.yml/badge.svg)](https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/actions/workflows/template-validate.yml)
 [![Vulnerable Pages](https://img.shields.io/website?labelColor=3D444C&link=https://vulnerable-pages.onrender.com/&label=%F0%9F%8E%AFVulnerable%20Pages&url=https://vulnerable-pages.onrender.com/)](https://vulnerable-pages.onrender.com/)
 
-![LOGO](https://github.com/user-attachments/assets/8f0b666e-a54c-45e9-9f33-4fa414fb122e)
-
+<p align="center">
+<img src="https://github.com/user-attachments/assets/8f0b666e-a54c-45e9-9f33-4fa414fb122e">
+</p>
 
 # OWASP ASVS Security Evaluation Templates with Nuclei
 
