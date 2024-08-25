@@ -54,3 +54,4 @@ http:
         part: interactsh_protocol  # Confirms the HTTP Interaction
         words:
           - "http"
+          - "dns"
