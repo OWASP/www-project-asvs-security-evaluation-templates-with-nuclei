@@ -9,6 +9,7 @@ info:
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/19-Testing_for_Server-Side_Request_Forgery
+    - https://snbig.github.io/Vulnerable-Pages/ASVS_12_3_3/
 
   tags: asvs,12.3.3
 
