@@ -10,6 +10,7 @@ info:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting
     - https://snbig.github.io/Vulnerable-Pages/ASVS_5_3_3/
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/dast/vulnerabilities/xss/reflected-xss.yaml
+    - https://snbig.github.io/Vulnerable-Pages/ASVS_5_3_3/
 tags: asvs,5.3.3
 description: |
     Verify that context-aware, preferably automated - or at worst, manual - output escaping protects against reflected, stored, and DOM based XSS. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering))
