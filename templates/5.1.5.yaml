@@ -9,7 +9,7 @@ info:
   reference:
     - https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html
     - https://cwe.mitre.org/data/definitions/601.html
-    - https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/04-Testing_for_Client_Side_URL_Redirect
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client_Side_Testing/04-Testing_for_Client_Side_URL_Redirect
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/generic/open-redirect-generic.yaml
     - https://snbig.github.io/Vulnerable-Pages/ASVS_5_1_5/
   tags: asvs,5.1.5
