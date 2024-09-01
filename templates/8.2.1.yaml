@@ -3,7 +3,7 @@ id: ASVS-4-0-3-V8-2-1
 info:
   name: ASVS 8.2.1 Check
   author: AmirHossein Raeisi
-  severity: low
+  severity: info
   classification:
     cwe-id: CWE-525
   reference:
@@ -16,46 +16,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{BaseURL}}{{sensitive_path}}"
-    payloads:
-      sensitive_path:
-        - "/"
-        - "/login"
-        - "/logout"
-        - "/register"
-        - "/dashboard"
-        - "/profile"
-        - "/settings"
-        - "/account"
-        - "/admin"
-        - "/user"
-        - "/users"
-        - "/search"
-        - "/messages"
-        - "/notifications"
-        - "/help"
-        - "/support"
-        - "/contact"
-        - "/about"
-        - "/privacy"
-        - "/terms"
-        - "/docs"
-        - "/api"
-        - "/api/v1"
-        - "/api/v2"
-        - "/home"
-        - "/welcome"
-        - "/password-reset"
-        - "/forgot-password"
-        - "/update-profile"
-        - "/billing"
-        - "/invoices"
-        - "/orders"
-        - "/cart"
-        - "/checkout"
-        - "/confirmation"
-        - "/history"
-        - "/activities"
+      - "{{BaseURL}}"
 
     matchers-condition: and
     stop-at-first-match: true
@@ -65,9 +26,3 @@ http:
         regex:
           - '(?i)cache-control:.*no-store'
         negative: true
-
-      - type: status
-        status:
-          - 200
-          - 301
-          - 302
