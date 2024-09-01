@@ -10,7 +10,7 @@ info:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/19-Testing_for_Server-Side_Request_Forgery
     - https://snbig.github.io/Vulnerable-Pages/ASVS_12_6_1/
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/dast/vulnerabilities/ssrf/response-ssrf.yaml
-    - https://snbig.github.io/Vulnerable-Pages/ASVS_12_6_1/ 
+    - https://snbig.github.io/Vulnerable-Pages/ASVS_12_6_1/
   tags: asvs,5.2.6
   description: |
     Verify that the application protects against SSRF attacks, by validating or sanitizing untrusted data or HTTP file metadata, such as filenames and URL input fields, and uses allow lists of protocols, domains, paths and ports.
