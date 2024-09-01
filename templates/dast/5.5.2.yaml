@@ -9,7 +9,7 @@ info:
   reference:
     - https://github.com/andresriancho/w3af/blob/master/w3af/plugins/audit/xxe.py
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/dast/vulnerabilities/xxe/generic-xxe.yaml
-    - https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection
   tags: asvs,5.5.2
   description: |
     Verify that the application correctly restricts XML parsers to only use the most restrictive configuration possible and to ensure that unsafe features such as resolving external entities are disabled to prevent XML eXternal Entity (XXE) attacks.
