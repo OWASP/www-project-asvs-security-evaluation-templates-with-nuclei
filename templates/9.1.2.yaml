@@ -9,6 +9,8 @@ info:
   reference:
     - https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/ssl/insecure-cipher-suite-detect.yaml
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security
+    - https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html
   tags: asvs,9.1.2
   description: |
     Verify using up to date TLS testing tools that only strong cipher suites are enabled, with the strongest cipher suites set as preferred.
