@@ -1,2 +1,2 @@
 ### Leaders
-* [Hamed Salimian](mailto:snbig@pm.me)
+* [Hamed Salimian](mailto:hamed.salimian@owasp.org)
