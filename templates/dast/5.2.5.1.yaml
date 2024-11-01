@@ -11,8 +11,8 @@ info:
     - https://github.com/DiogoMRSilva/websitesVulnerableToSSTI#list-of-seversneeds-update
     - https://snbig.github.io/Vulnerable-Pages/ASVS_5_2_5/
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/dast/vulnerabilities/ssti/reflection-ssti.yaml
-tags: asvs,5.2.5
-description: |
+  tags: asvs,5.2.5
+  description: |
     Verify that the application protects against template injection attacks by ensuring that any user input being included is sanitized or sandboxed.
 
 variables:
