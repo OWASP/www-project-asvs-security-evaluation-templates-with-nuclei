@@ -3,7 +3,7 @@ name: ☑️ Template Sign
 on:
   push:
     branches:
-      - main
+      - dev
     paths:
       - '**.yaml'
   workflow_dispatch:
