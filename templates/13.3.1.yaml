@@ -50,3 +50,5 @@ http:
         name: "XSD schema validation does not take place"
         dsl:
           - http_1_status_code == http_2_status_code
+
+# digest: 4a0a004730450220553d29d64c11f522860d4ef744b33933542b6159bcf9e3ac9f489e622744a1db022100e94b0bf6b38bf9a610c861d28720f4fb973dd0a832fc57b4872f6e0a81969ac9:236a7c23afe836fbe231d6e037cff444

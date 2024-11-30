@@ -49,3 +49,5 @@ headless:
       - type: dsl
         dsl:
           - len(trim(split(assets_with_external_fqdn, '|'), '[]')) > 0
+
+# digest: 490a00463044022030bba129d709e98d69e14df93e8a8f77cbb7e3d605a26e284d7824bd29b2fcac02204f55d5a72ebb2d880e95eff630c941f07d0ced9bee8e0313dbe2e9b06d4ac496:236a7c23afe836fbe231d6e037cff444

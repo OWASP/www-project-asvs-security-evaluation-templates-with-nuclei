@@ -46,3 +46,5 @@ http:
         dsl:
           - status_code < 210 && status_code >= 200
           - to_number(forbidden_status_code) != status_code
+
+# digest: 490a0046304402204a85e8500309dfa1f935ef7d5506ddf8c9f25ac26171769773c3d8ab8d510a07022065cc0dc83b5dfb52b8e6ebfd23e125442e7340b0b2c5fd41dffc21c1b76323c1:236a7c23afe836fbe231d6e037cff444

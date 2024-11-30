@@ -26,3 +26,5 @@ http:
         name: '"X-Content-Type-Options: nosniff" header does not exist.'
         dsl:
           - '!contains(header, "X-Content-Type-Options: nosniff")'
+
+# digest: 4a0a00473045022021b7cc0154b0c7bd2b5ac0ee5deab034b12a3cf59a47bd6a28c39c6a4bd0c7c4022100a24955829e13964f260b1dc1b581c14dfc6eb68789581c68753c873aabe062e7:236a7c23afe836fbe231d6e037cff444
