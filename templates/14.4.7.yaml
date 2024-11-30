@@ -54,3 +54,5 @@ http:
         regex:
           - (?i)<meta\s+http-equiv=["']Content-Security-Policy["'][^>]*content=["'][^"']*frame-ancestors[^"']*["'][^>]*>
         part: body
+
+# digest: 4a0a00473045022100fdf3617a3b40b43af7b9ea187ae58fd334c6a2cdaa66dc291637fb668545743602206082e3c4fd4e10b8988e214e0384493449542e7ab8a9e61d5b895dfdda05e598:236a7c23afe836fbe231d6e037cff444

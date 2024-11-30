@@ -48,3 +48,5 @@ http:
         part: access_control_allow_origin
         words:
           - "null"
+
+# digest: 490a0046304402203dab3e5b26d174760a953d85392340cb58608cb60fdd6ed9393872db1d8234010220255ae97983eec7c21acff3dfbcf29d50182883570aa29c77d2ba91f07d07ace8:236a7c23afe836fbe231d6e037cff444

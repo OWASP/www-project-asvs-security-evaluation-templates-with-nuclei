@@ -42,3 +42,5 @@ http:
         regex:
           - (?i)<meta\s+name="referrer"\s+content\s*=\s*["']strict-origin-when-cross-origin["']\s*\/?>
         part: body
+
+# digest: 4a0a00473045022100e70e0364f38ab74fea56856ce5d7a49002e63ffcfc5ad090e4dfd1bee11414ec02204832f0a14a3de7d0afd578e63024ba14eb70db8da4ba3f51b43611fdcc700d1e:236a7c23afe836fbe231d6e037cff444

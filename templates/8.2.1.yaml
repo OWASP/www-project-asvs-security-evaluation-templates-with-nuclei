@@ -26,3 +26,5 @@ http:
         regex:
           - '(?i)cache-control:.*no-store'
         negative: true
+
+# digest: 490a00463044022039bd2b86a4b691ac7599de720790ff8a27691d1ebe290d654276f55be597ba08022003c8395bde847d221c4372a9b858d6b5d0b77dc902724de8e175bb2b82400f3d:236a7c23afe836fbe231d6e037cff444

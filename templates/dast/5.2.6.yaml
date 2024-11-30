@@ -104,3 +104,5 @@ http:
         part: body
         regex:
           - 'id[\s\S]+interfaces\/'
+
+# digest: 4a0a0047304502206db35451526c61ae1137857401104fd6fa9ee4991fade362ca16604b56afad20022100e374582eca20f469b35f0a7c915f89b21b9bca7e60a941e3303bd867e7c626d1:236a7c23afe836fbe231d6e037cff444

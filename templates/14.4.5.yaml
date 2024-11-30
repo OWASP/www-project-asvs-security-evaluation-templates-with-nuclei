@@ -42,3 +42,5 @@ http:
         regex:
           - (?i)Strict-Transport-Security:\s*.*\bincludeSubdomains\b
         part: header
+
+# digest: 4a0a004730450220644eb8e8c378d2cfe98dbe293b3962740473a3a8e6d67069040ac127f19c3bcf022100f5a7e3ffaef6a581b01b7277334cd6190a6459551e8db7a7df1ca7af83171976:236a7c23afe836fbe231d6e037cff444

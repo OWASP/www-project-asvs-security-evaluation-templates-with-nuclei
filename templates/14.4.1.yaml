@@ -61,3 +61,5 @@ http:
         regex:
           - (?i)<\?xml\s+version\s*=\s*["'][0-9.]*["']\s+encoding\s*=\s*["'](utf-?8|utf-?16|iso-?8859-?1)["']\s*\?>
         part: body
+
+# digest: 4a0a00473045022100b131ce94c26edbe11d5324b84d29f79662a53d29df6fbfe4cc9b9b5a915a95e602206e3c2bbe09245de1b800857b5f05e63a97d4bc0e406e2fe8220d0e864f9f9fa0:236a7c23afe836fbe231d6e037cff444

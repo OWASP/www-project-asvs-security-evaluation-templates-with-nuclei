@@ -49,3 +49,5 @@ http:
         name: "JSON schema validation does not take place"
         dsl:
           - http_1_status_code == http_2_status_code
+
+# digest: 4a0a0047304502205a43e4e3d911399b0279a0e36d20c6df789cbc05e893c72c91223bbd5628c558022100c2c4e68d2c524bfad2d6abf7e68e73b3e6f23f6e3576b1118eec73867be21413:236a7c23afe836fbe231d6e037cff444
