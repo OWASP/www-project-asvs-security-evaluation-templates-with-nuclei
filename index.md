@@ -14,7 +14,7 @@ pitch: This project aims to develop nuclei templates for evaluating OWASP Applic
 ![Github stars ASVS](https://img.shields.io/github/stars/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei?style=social)
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/8f0b666e-a54c-45e9-9f33-4fa414fb122e">
+<img src="./assets/images/Logo.png">
 </p>
 
 # OWASP ASVS Security Evaluation Templates with Nuclei
