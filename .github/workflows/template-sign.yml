@@ -14,8 +14,6 @@ jobs:
     if: github.repository == 'OWASP/www-project-asvs-security-evaluation-templates-with-nuclei'
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: '${{ secrets.GITHUB_TOKEN }}'
       - uses: projectdiscovery/actions/setup/nuclei@v1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
