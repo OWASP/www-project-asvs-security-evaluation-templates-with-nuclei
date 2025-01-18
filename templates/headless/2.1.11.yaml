@@ -30,7 +30,7 @@ headless:
         args:
           code: |
             () => {
-                return (function verifyPasteFunction(testValue = "{{rand_text_alphanumeric(14)}}") {
+                return (function verifyPasteFunction(testValue = "{{rand_text_alphanumeric(16)}}") {
                     const passwordFields = document.querySelectorAll('input[name="{{password_field_name}}"]');
 
                     if (passwordFields.length === 0) {
@@ -62,4 +62,3 @@ headless:
       - type: dsl
         dsl:
           - anyFieldsFunctional == "true"
-# digest: 4a0a00473045022100c74aedc8edd1b389d7a60d6ec0d897e107db389e572bfd66fa769afa06b0306b02204b6ff6f459c0338e15b1265f608fa55b533d6f13f808776e4ca95a55642535d1:236a7c23afe836fbe231d6e037cff444
