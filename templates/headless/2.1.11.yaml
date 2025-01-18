@@ -1,0 +1,64 @@
+id: ASVS-4-0-3-V2-1-11
+
+info:
+  name: ASVS 2.1.11 Check
+  author: Hamed Salimian
+  severity: low
+  classification:
+    cwe-id: CWE-521
+  reference:
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/04-Authentication_Testing/07-Testing_for_Weak_Password_Policy.html
+    - https://snbig.github.io/Vulnerable-Pages/ASVS_2_1_11/
+  tags: asvs,2.1.11
+  description: |
+    Verify that "paste" functionality, browser password helpers, and external password managers are permitted.
+    Run with `-show-browser` switch.
+
+variables:
+  password_field_name: "password"
+
+headless:
+  - steps:
+      - args:
+          url: "{{BaseURL}}"
+        action: navigate
+
+      - action: waitload
+
+      - action: script
+        name: anyFieldsFunctional
+        args:
+          code: |
+            () => {
+                return (function verifyPasteFunction(testValue = "{{rand_text_alphanumeric(16)}}") {
+                    const passwordFields = document.querySelectorAll('input[name="{{password_field_name}}"]');
+
+                    if (passwordFields.length === 0) {
+                        return false; // No password fields found
+                    }
+
+                    let isAnyPasteFunctional = false; // Flag to track if any field is functional
+
+                    passwordFields.forEach((field) => {
+                        // Verify paste functionality
+                        field.value = ""; // Clear the field
+
+                        // Simulate paste by directly setting the value
+                        field.focus();
+                        document.execCommand("insertText", false, testValue); // Programmatic paste
+
+                        const pastedValue = field.value;
+                        if (pastedValue === testValue) {
+                            isAnyPasteFunctional = true; // Set the flag to true if paste works
+                        }
+                    });
+
+                    // Return true if any field was functional, otherwise false
+                    return isAnyPasteFunctional;
+                })();
+            }
+
+    matchers:
+      - type: dsl
+        dsl:
+          - anyFieldsFunctional == "true"
