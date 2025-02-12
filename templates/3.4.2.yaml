@@ -44,3 +44,4 @@ javascript:
       - type: regex
         regex:
           - '[a-zA-Z0-9_-]+'
+# digest: 4a0a00473045022100a1ef06a1cf51a7e5a0399a7893ea37adf853ba4a87d4fa6aeb50503351035f4102204eaef51de28de227045aed5105b480c759249314d8a948a0aab21c518c1f152d:236a7c23afe836fbe231d6e037cff444
