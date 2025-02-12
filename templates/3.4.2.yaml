@@ -7,7 +7,7 @@ info:
   classification:
     cwe-id: CWE-1004
   reference:
-    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes    - https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html
     - https://vulnerable-pages.onrender.com/set-cookie
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/http/misconfiguration/cookies-without-httponly.yaml
   tags: asvs,3.4.2
@@ -44,4 +44,3 @@ javascript:
       - type: regex
         regex:
           - '[a-zA-Z0-9_-]+'
-# digest: 4a0a00473045022100c2b42cddd46efda37dc9650ed2f881c6b089ca31b65bcc78d53a21ba41c0a5bc022059b47407bcc48d3ff9e40c71aadb6af658570d839d5cf88388e740cc3fd5bd7b:236a7c23afe836fbe231d6e037cff444
