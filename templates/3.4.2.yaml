@@ -7,7 +7,7 @@ info:
   classification:
     cwe-id: CWE-1004
   reference:
-    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes    - https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html
+    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes
     - https://vulnerable-pages.onrender.com/set-cookie
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/http/misconfiguration/cookies-without-httponly.yaml
   tags: asvs,3.4.2
