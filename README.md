@@ -32,3 +32,15 @@ For detailed information and guidelines about contributing in developing templat
 The project current core team are:
 - [Hamed Salimain](https://github.com/Snbig)  (Project Leader)
 - [AmirHossein Raeisi](https://github.com/Ahsraeisi)  (Project Co-lead)
+<h2 align="center">Available Templates</h2>
+<table border="1" cellpadding="5" cellspacing="0" align="center">
+        <tr><td>12.1.1</td><td>12.1.1.2</td><td>12.3.3</td><td>12.6.1</td><td>13.1.3</td></tr>
+<tr><td>13.2.1</td><td>13.2.2</td><td>13.3.1</td><td>14.2.3</td><td>14.3.2</td></tr>
+<tr><td>14.4.1</td><td>14.4.2</td><td>14.4.3</td><td>14.4.4</td><td>14.4.5</td></tr>
+<tr><td>14.4.6</td><td>14.4.7</td><td>14.5.1</td><td>14.5.2</td><td>14.5.3</td></tr>
+<tr><td>2.1.11</td><td>3.4.2</td><td>5.1.5</td><td>5.2.5.1</td><td>5.2.6</td></tr>
+<tr><td>5.3.3.1</td><td>5.3.3.2</td><td>5.3.9</td><td>5.5.2</td><td>8.2.1</td></tr>
+<tr><td>9.1.2</td><td>9.1.3</td></tr>
+
+</table>
+</center>
