@@ -38,9 +38,9 @@ The project current core team are:
 <tr><td>13.2.1</td><td>13.2.2</td><td>13.3.1</td><td>14.2.3</td><td>14.3.2</td></tr>
 <tr><td>14.4.1</td><td>14.4.2</td><td>14.4.3</td><td>14.4.4</td><td>14.4.5</td></tr>
 <tr><td>14.4.6</td><td>14.4.7</td><td>14.5.1</td><td>14.5.2</td><td>14.5.3</td></tr>
-<tr><td>2.1.11</td><td>3.4.2</td><td>5.1.5</td><td>5.2.5.1</td><td>5.2.6</td></tr>
-<tr><td>5.3.3.1</td><td>5.3.3.2</td><td>5.3.9</td><td>5.5.2</td><td>8.2.1</td></tr>
-<tr><td>9.1.2</td><td>9.1.3</td></tr>
+<tr><td>2.1.11</td><td>3.4.1</td><td>3.4.2</td><td>5.1.5</td><td>5.2.5.1</td></tr>
+<tr><td>5.2.6</td><td>5.3.3.1</td><td>5.3.3.2</td><td>5.3.9</td><td>5.5.2</td></tr>
+<tr><td>8.2.1</td><td>9.1.2</td><td>9.1.3</td></tr>
 
 </table>
 </center>
