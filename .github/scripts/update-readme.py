@@ -2,7 +2,7 @@ import os
 import re
 import math
 
-# Function to find .yaml files recursively in all directories under templates
+# Function to find .yaml files recursively
 def find_yaml_files(root_dir):
     yaml_files = []
     for dirpath, _, filenames in os.walk(root_dir):
@@ -11,57 +11,36 @@ def find_yaml_files(root_dir):
                 yaml_files.append(os.path.join(dirpath, filename))
     return yaml_files
 
-# Function to list all templates with a default ❌ mark
-def initialize_template_status(yaml_files):
-    template_status = {}
-    for file in yaml_files:
-        base_name = os.path.splitext(os.path.basename(file))[0]
-        template_status[base_name] = "❌"  # Default to ❌
-    return template_status
-
-# Function to check if a related vulnerable page exists and update the status
-def update_vulnerable_status(template_status, vuln_dir):
-    for vuln_file in os.listdir(vuln_dir):
-        if vuln_file.startswith("ASVS_"):
-            base_name = vuln_file.replace("ASVS_", "").replace("_", ".")
-            if base_name in template_status:
-                template_status[base_name] = f'<a href="https://snbig.github.io/Vulnerable-Pages/{vuln_file}">✔️</a>' # Update to ✔️ if found
-
-# Function to update README.md with a table (4 columns: Template Name, Vulnerable Page, Template Name, Vulnerable Page)
-def update_readme(template_status, root_dir):
+# Function to update README.md with an HTML table (5 columns, no .yaml extension)
+def update_readme(yaml_files):
     readme_file = 'README.md'
-    github_base_url = "https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/main/"
-    
     try:
         with open(readme_file, 'r', encoding='utf-8') as file:
             readme_content = file.read()
 
-        # Sort templates based on the first two sections of the version number
-        sorted_templates = sorted(template_status.items(), key=lambda x: tuple(map(int, x[0].split(".")[:2])))
+        # Remove .yaml extension and sort filenames
+        yaml_filenames = sorted(set(os.path.splitext(os.path.basename(f))[0] for f in yaml_files))
 
-        # Create table rows with 4 columns
+        # Create a table with 5 columns
         table_rows = ""
-        for i in range(0, len(sorted_templates), 2):
-            # Take two templates at a time
-            row_templates = sorted_templates[i:i + 2]
-            row_html = ""
-            for file_name, status in row_templates:
-                file_path = next(file for file in yaml_files if file_name in file)  # Find full file path
-                file_url = github_base_url + file_path.replace(os.sep, '/')  # Convert path to GitHub URL
-                file_link = f'<a href="{file_url}">{file_name}</a>'
-                row_html += f"<td>{file_link}</td><td align='center'>{status}</td>"
-            table_rows += f"<tr>{row_html}</tr>\n"
+        num_files = len(yaml_filenames)
+        num_columns = 5
+        num_rows = math.ceil(num_files / num_columns) 
 
-        table_html = f'''<h2 align="center">Available Templates</h2>
+        for i in range(num_rows):
+            row_files = yaml_filenames[i * num_columns:(i + 1) * num_columns]
+            table_rows += "<tr>" + "".join(f"<td>{file}</td>" for file in row_files) + "</tr>\n"
+
+        table_html = f"""<h2 align="center">Available Templates</h2>
 <table border="1" cellpadding="5" cellspacing="0" align="center">
-<tr><th>Template Name</th><th>Vulnerable Page</th><th>Template Name</th><th>Vulnerable Page</th></tr>
-{table_rows}
+        {table_rows}
 </table>
 </center>
-'''
+"""
 
         if "<h2 align=\"center\">Available Templates</h2>" in readme_content:
             h2_index = readme_content.index("<h2 align=\"center\">Available Templates</h2>")
+
             readme_content = readme_content[:h2_index]
 
         readme_content += f'{table_html}'
@@ -76,13 +55,9 @@ def update_readme(template_status, root_dir):
         print(f"An error occurred: {e}")
 
 if __name__ == '__main__':
-    root_dir = 'templates'
-    vuln_dir = 'Vulnerable-Pages'
+    root_dir = '../../'
     yaml_files = find_yaml_files(root_dir)
-    
     if yaml_files:
-        template_status = initialize_template_status(yaml_files)
-        update_vulnerable_status(template_status, vuln_dir)
-        update_readme(template_status, root_dir)
+        update_readme(yaml_files)
     else:
         print("No matching YAML files found.")
