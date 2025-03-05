@@ -3,9 +3,7 @@ name: Update README with Templates
 on:
   push:
     branches:
-      - dev
-    paths:
-      - '**.yaml'
+      - main
   pull_request:
     branches:
       - dev
@@ -15,42 +13,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4
-        with:
-          submodules: true  # Ensure submodules are initialized and updated
-
-      - name: Initialize and update submodules (if needed)
-        run: git submodule update --init --recursive
+        uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
       - name: Run Python script to update README
         run: python .github/scripts/update-readme.py
 
-      # Set up GPG for commit signing
-      - name: Set up GPG
-        run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
-          git config --global user.name "Signing Bot"
-          git config --global user.email "github-actions@github.com"
-          git config --global commit.gpgSign true
-          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
-
-      # Commit changes with GPG signing
-      - name: Commit changes if any
-        run: |
-          git add README.md
-          if ! git diff --cached --quiet; then
-            git commit -S -m "Update README table"
-          else
-            echo "No changes to commit"
-          fi
-
-      # Push changes
-      - name: Push changes
-        run: |
-          git pull origin dev --rebase
-          git push origin dev
+        
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update README table
+          commit_user_name: GitHub Actions
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          branch: main
+          file_pattern: README.md
