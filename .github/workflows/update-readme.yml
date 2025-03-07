@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - dev
+    paths:
+      - '**.yaml'
   pull_request:
     branches:
       - dev
@@ -24,11 +26,25 @@ jobs:
         run: python .github/scripts/update-readme.py
 
         
+      - name: Run Python script to update README
+        run: python .github/scripts/update-readme.py
+      # Set up GPG for commit signing
+      - name: Set up GPG
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          git config --global user.name "Signing Bot"
+          git config --global user.email "github-actions@github.com"
+          git config --global commit.gpgSign true
+          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+
+      # Commit changes with GPG signing
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Update README table
-          commit_user_name: GitHub Actions
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-          branch: dev
-          file_pattern: README.md
+        run: |
+          git add README.md
+          git commit -S -m "Update README table"
+        
+      # Push changes
+      - name: Push changes
+        run: |
+          git pull origin dev --rebase
+          git push origin dev
