@@ -52,7 +52,7 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
-        part: interactsh_protocol  # Confirms the HTTP Interaction
+        part: interactsh_protocol
         words:
           - "http"
           - "dns"
