@@ -14,7 +14,7 @@ def find_yaml_files(root_dir):
 # Function to update README.md with an HTML table (5 columns, hyperlinks with directory structure)
 def update_readme(yaml_files, root_dir):
     readme_file = 'README.md'
-    github_base_url = "https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/dev/"
+    github_base_url = "https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/dev/templates/"
     
     try:
         with open(readme_file, 'r', encoding='utf-8') as file:
