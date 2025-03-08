@@ -30,7 +30,7 @@ For detailed information and guidelines about contributing in developing templat
 
 #### Core Team
 The project current core team are:
-- [Hamed Salimain](https://github.com/Snbig)  (Project Leader)
+- [Hamed Salimian](https://github.com/Snbig)  (Project Leader)
 - [AmirHossein Raeisi](https://github.com/Ahsraeisi)  (Project Co-lead)
 <h2 align="center">Available Templates</h2>
 <table border="1" cellpadding="5" cellspacing="0" align="center">
