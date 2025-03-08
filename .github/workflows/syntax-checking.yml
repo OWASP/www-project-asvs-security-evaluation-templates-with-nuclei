@@ -2,6 +2,8 @@ name: ❄️ YAML Lint
 
 on: 
   push:
+    paths:
+      - '**.yaml'
   pull_request:
     paths:
       - '**.yaml'
