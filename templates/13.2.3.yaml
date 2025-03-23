@@ -1,0 +1,44 @@
+id: ASVS-4-0-3-V13-2-3
+
+info:
+  name: ASVS 13.2.3 Check
+  author: Masoud Abdaal
+  severity: medium
+  classification:
+    cwe-id: CWE-352
+  reference:
+    - https://github.com/OWASP/ASVS/blob/master/4.0/en/0x21-V13-API.md#v132-restful-web-service
+  tags: asvs,13.2.3
+  description: |
+     Verify that RESTful web services that utilize cookies are protected from Cross-Site Request Forgery via the use of at least one or more of the following: double submit cookie pattern, CSRF nonces, or Origin request header checks
+
+requests:        
+  - method: GET
+    headers: 
+      Referer: "localhost"
+    path:
+      - "{{BaseURL}}"
+    matchers:
+      - type: status
+        status:
+          - 200
+
+  - method: GET
+    headers: 
+      Referer: "127.0.0.1"
+    path:
+      - "{{BaseURL}}"
+    matchers:
+      - type: status
+        status:
+          - 200
+
+  - method: GET
+    headers: 
+      Referer: "https://owasp.org"
+    path:
+      - "{{BaseURL}}"
+    matchers:
+      - type: status
+        status:
+          - 200
