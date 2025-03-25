@@ -1,0 +1,41 @@
+true
+false
+"true"
+"false"
+0
+1
+42
+-7
+100
+-250
+1000.50
+-250.75
+3.14
+-0.001
+"yes"
+"no"
+"active"
+"inactive"
+"pending"
+"verified"
+"unverified"
+"confirmed"
+"unconfirmed"
+"2023-01-01T12:00:00Z"
+"2024-12-31T23:59:59Z"
+"01/01/2023 12:00 PM"
+1672531200
+"550e8400-e29b-41d4-a716-446655440000"
+"123e4567-e89b-12d3-a456-426614174000"
+"user_12345"
+"john_doe"
+"admin"
+"user"
+"moderator"
+"guest"
+"superuser"
+{"admin": 1}
+{"isActive": true, "user": "admin"}
+{"balance": 99999.50, "currency": "USD"}
+{"role": "moderator", "approved": false}
+{"created_at": "2023-01-01T12:00:00Z", "updated_at": 1672531200}
