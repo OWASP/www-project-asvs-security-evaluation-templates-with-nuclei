@@ -1,0 +1,89 @@
+id: ASVS-4-0-3-V5-2-1
+
+info:
+  name: ASVS 5.2.1 Check
+  author: Masoud Abdaal
+  severity: high
+  classification:
+    cwe-id: CWE-116
+  reference:
+    - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/03-Testing_for_HTML_Injection
+    - https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing
+  tags: asvs,5.2.1
+  description: |
+    Verify that all untrusted HTML input from WYSIWYG editors or similar is properly sanitized with an HTML sanitizer library or framework feature.
+
+requests:
+  - name: EditorJS Payloads
+    method: POST
+    path:
+      - "{{BaseURL}}"
+    headers:
+      Content-Type: application/json
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0
+    
+    attack: clusterbomb
+    payloads:
+      payload: "templates/dast/assets/5.2.1Payloads.txt"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "{{payload}}"
+    body: |
+      {
+        "time": "{{payload}}",
+        "blocks": [
+          {
+            "type": "{{payload}}",
+            "data": {
+              "text": "{{payload}}",
+              "level": "{{payload}}"
+            }
+          },
+          {
+            "type": "{{payload}}",
+            "data": {
+              "text": "{{payload}}"
+            }
+          },
+          {
+            "type": "{{payload}}",
+            "data": {
+              "style": "{{payload}}",
+              "items": [
+                "{{payload}}",
+                "{{payload}}",
+                "{{payload}}"
+              ]
+            }
+          }
+        ],
+        "version": "{{payload}}"
+      }
+
+  - name: QuillJS Payload
+    method: POST
+    path:
+      - "{{BaseURL}}"
+    headers:
+      Content-Type: application/json
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0
+
+    attack: clusterbomb
+    payloads:
+      payload: "templates/dast/assets/5.2.1Payloads.txt"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "{{payload}}"    
+    body: |
+      {
+        "ops": [
+          { "insert": "{{payload}}" },
+          { "insert": "{{payload}}", "attributes": { "bold": "{{payload}}" } },
+          { "insert": "{{payload}}", "attributes": { "italic": "{{payload}}" } },
+          { "insert": "{{payload}}", "attributes": { "link": "{{payload}}" } }
+        ]
+      }
