@@ -28,33 +28,20 @@ http:
       - "{{BaseURL}}?{{parameters}}[1]=x&{{parameters}}[1]=Polluted_2"
 
     payloads:
-      parameters: 'assets/5.1.1Parameters.txt'
-
-    matchers:
-      - type: status
-        status:
-          - 200
-          - 302
-
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - '(?i)(?P<parameter>[a-zA-Z0-9_\[\]]+)=x(?:&|,).*?(?P<value>Polluted[^&\s]+)'
-
+      parameters: 'templates/dast/assets/5.1.1Parameters.txt'
 
   - raw:
-      - |
-        POST HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/x-www-form-urlencoded
+    - |
+      POST HTTP/1.1
+      Host: {{Hostname}}
+      Content-Type: application/x-www-form-urlencoded
 
-        {{body_variant}}
+      {{body_variant}}
 
     payloads:
     # [Nuclei BUG]  Loading Combination of Payloads Failed, This Flow Has Been Disabled
-      parameters: 'assets/5.1.1Parameters.txt'
-
+      parameters: 'templates/dast/assets/5.1.1Parameters.txt'
+      
       body_variant:
         - '{{parameters}}=x&{{parameters}}=Polluted_1'
         - '{{parameters}}[]=x&{{parameters}}=Polluted_2'
@@ -65,15 +52,4 @@ http:
         - '{{parameters}}=x%26{{parameters}}=Polluted_2'
         - |
             { "{{parameters}}" :"x" , "{{parameters}}": "Polluted_1" }'
-    matchers:
-      - type: status
-        status:
-          - 200
-          - 302
-
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - '(?i)(?P<parameter>[a-zA-Z0-9_\[\]]+)=x(?:&|,).*?(?P<value>Polluted[^&\s]+)'
-# digest: 4a0a00473045022100ddb41d69ed02bf3cd2bdf3724de8d7aeb7c22ddfeb508ba5686d4b4e1c8b84ce022026d2b3bb3ca4ef6bfb5bc9c1795204f3ea0e445dae8adb6ffd2fc19415a83acc:236a7c23afe836fbe231d6e037cff444
+  
