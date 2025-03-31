@@ -27,10 +27,10 @@ def update_vulnerable_status(template_status, vuln_dir):
             if base_name in template_status:
                 template_status[base_name] = "✔️"  # Update to ✔️ if found
 
-# Function to update README.md with a table (2 columns: Template Name, Vulnerable Page Exists)
+# Function to update README.md with a table (4 columns: Template Name, Vulnerable Page, Template Name, Vulnerable Page)
 def update_readme(template_status, root_dir):
     readme_file = 'README.md'
-    github_base_url = "https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/dev/templates/"
+    github_base_url = "https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/dev/"
     
     try:
         with open(readme_file, 'r', encoding='utf-8') as file:
@@ -39,15 +39,22 @@ def update_readme(template_status, root_dir):
         # Sort templates based on the first two sections of the version number
         sorted_templates = sorted(template_status.items(), key=lambda x: tuple(map(int, x[0].split(".")[:2])))
 
-        # Create table rows with 2 columns
+        # Create table rows with 4 columns
         table_rows = ""
-        for file_name, status in sorted_templates:
-            file_link = '<a href="' + github_base_url + file_name + '.yaml">' + file_name + '</a>'
-            table_rows += "<tr><td>" + file_link + "</td><td align='center'>" + status + "</td></tr>\n"
+        for i in range(0, len(sorted_templates), 2):
+            # Take two templates at a time
+            row_templates = sorted_templates[i:i + 2]
+            row_html = ""
+            for file_name, status in row_templates:
+                file_path = next(file for file in yaml_files if file_name in file)  # Find full file path
+                file_url = github_base_url + file_path.replace(os.sep, '/')  # Convert path to GitHub URL
+                file_link = f'<a href="{file_url}">{file_name}</a>'
+                row_html += f"<td>{file_link}</td><td align='center'>{status}</td>"
+            table_rows += f"<tr>{row_html}</tr>\n"
 
         table_html = f'''<h2 align="center">Available Templates</h2>
 <table border="1" cellpadding="5" cellspacing="0" align="center">
-<tr><th>Template Name</th><th>Vulnerable Page Exists</th></tr>
+<tr><th>Template Name</th><th>Vulnerable Page</th><th>Template Name</th><th>Vulnerable Page</th></tr>
 {table_rows}
 </table>
 </center>
