@@ -30,6 +30,19 @@ http:
     payloads:
       parameters: 'templates/dast/assets/5.1.1Parameters.txt'
 
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 302
+    
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '(?i)(?P<parameter>[a-zA-Z0-9_\[\]]+)=x(?:&|,).*?(?P<value>Polluted[^&\s]+)'
+
+
   - raw:
     - |
       POST HTTP/1.1
@@ -52,4 +65,15 @@ http:
         - '{{parameters}}=x%26{{parameters}}=Polluted_2'
         - |
             { "{{parameters}}" :"x" , "{{parameters}}": "Polluted_1" }'
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 302
+    
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '(?i)(?P<parameter>[a-zA-Z0-9_\[\]]+)=x(?:&|,).*?(?P<value>Polluted[^&\s]+)'
 # digest: 490a0046304402205e956582033e70e820435ba4925d290a02b4ccd8b40dd6f55628fe527115c49d02200243a5b544a878398eb1972e8e74bc298263db6c6ee347a8bfac36a844baffff:236a7c23afe836fbe231d6e037cff444
