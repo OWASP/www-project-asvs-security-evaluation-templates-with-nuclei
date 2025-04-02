@@ -25,7 +25,7 @@ def update_vulnerable_status(template_status, vuln_dir):
         if vuln_file.startswith("ASVS_"):
             base_name = vuln_file.replace("ASVS_", "").replace("_", ".")
             if base_name in template_status:
-                template_status[base_name] = "✔️"  # Update to ✔️ if found
+                template_status[base_name] = f'<a href="https://snbig.github.io/Vulnerable-Pages/{vuln_file}">✔️</a>' # Update to ✔️ if found
 
 # Function to update README.md with a table (4 columns: Template Name, Vulnerable Page, Template Name, Vulnerable Page)
 def update_readme(template_status, root_dir):
