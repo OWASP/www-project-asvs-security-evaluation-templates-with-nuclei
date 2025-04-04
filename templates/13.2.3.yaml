@@ -12,34 +12,35 @@ info:
   description: |
      Verify that RESTful web services that utilize cookies are protected from Cross-Site Request Forgery via the use of at least one or more of the following: double submit cookie pattern, CSRF nonces, or Origin request header checks
 
-requests:        
-  - method: GET
-    headers: 
-      Referer: "localhost"
-    path:
-      - "{{BaseURL}}"
-    matchers:
-      - type: status
-        status:
-          - 200
+http:
+  - raw:
+      - |
+        GET {{BaseURL}} HTTP/1.1
+        Host: {{Hostname}}
+        Origin: {{origin_schema}}{{origin_host}}{{origin_port}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+        Accept: */*
 
-  - method: GET
-    headers: 
-      Referer: "127.0.0.1"
-    path:
-      - "{{BaseURL}}"
-    matchers:
-      - type: status
-        status:
-          - 200
+    cookie-reuse: true
+    payloads:
+      origin_host:
+        - 127.0.0.1
+        - localhost
+        - '{{resolve("{{FQDN}}")}}'
+      origin_schema:
+        - http://
+        - https://
+      origin_port:
+        -
+        - :80
+        - :443
+    attack: clusterbomb
 
-  - method: GET
-    headers: 
-      Referer: "https://owasp.org"
-    path:
-      - "{{BaseURL}}"
+    stop-at-first-match: true
     matchers:
-      - type: status
-        status:
-          - 200
+      - type: dsl
+        name: 'Access Restriction Bypass Via Origin Spoof'
+        dsl:
+          - status_code < 210 && status_code >= 200
+          - to_number(forbidden_status_code) != status_code
 # digest: 490a00463044022070f4561c2092bdad81e89a15d849d699ebb2741ed1ff5bcf25bebf1ed4f0539a0220295e7f521a22950d8f10a94868c80600e89c0471148dac2fa64e23e79e7092ec:236a7c23afe836fbe231d6e037cff444
