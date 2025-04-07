@@ -2,7 +2,7 @@ id: ASVS-4-0-3-V5-2-1
 
 info:
   name: ASVS 5.2.1 Check
-  author: Masoud Abdaal
+  author: Masoud Abdaal,AmirHossein Raeisi
   severity: high
   classification:
     cwe-id: CWE-116
@@ -20,8 +20,8 @@ http:
   - pre-condition:
       - type: dsl
         dsl:
-        - method == POST
-        - len(body) > 0
+          - method == POST
+          - len(body) > 0
 
     payloads:
       reflection:
