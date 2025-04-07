@@ -13,78 +13,56 @@ info:
   description: |
     Verify that all untrusted HTML input from WYSIWYG editors or similar is properly sanitized with an HTML sanitizer library or framework feature.
 
-requests:
-  - name: EditorJS Payloads
-    method: POST
-    path:
-      - "{{BaseURL}}"
-    headers:
-      Content-Type: application/json
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0
-    
-    attack: clusterbomb
+variables:
+  first: "{{rand_int(10000, 99999)}}"
+
+http:
+  - pre-condition:
+      - type: dsl
+        dsl:
+        - method == POST
+        - len(body) > 0
+
     payloads:
-      payload: "templates/dast/assets/5.2.1Payloads.txt"
+      reflection:
+        - "'\"><{{first}}>"
+        - "'><{{first}}>"
+        - "\"><{{first}}>"
+
+    fuzzing:
+      - part: body
+        type: postfix
+        mode: multiple
+        keys:
+          - "ops"
+          - "insert"
+          - "ops"
+          - "insert"
+          - "attributes"
+          - "bold"
+          - "italic"
+          - "link"
+          - "time"
+          - "blocks"
+          - "type"
+          - "data"
+          - "text"
+          - "level"
+          - "style"
+          - "items"
+          - "version"
+        fuzz:
+          - "{{reflection}}"
+
+    stop-at-first-match: true
+    matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - "{{payload}}"
-    body: |
-      {
-        "time": "{{payload}}",
-        "blocks": [
-          {
-            "type": "{{payload}}",
-            "data": {
-              "text": "{{payload}}",
-              "level": "{{payload}}"
-            }
-          },
-          {
-            "type": "{{payload}}",
-            "data": {
-              "text": "{{payload}}"
-            }
-          },
-          {
-            "type": "{{payload}}",
-            "data": {
-              "style": "{{payload}}",
-              "items": [
-                "{{payload}}",
-                "{{payload}}",
-                "{{payload}}"
-              ]
-            }
-          }
-        ],
-        "version": "{{payload}}"
-      }
+          - "{{reflection}}"
 
-  - name: QuillJS Payload
-    method: POST
-    path:
-      - "{{BaseURL}}"
-    headers:
-      Content-Type: application/json
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0
-
-    attack: clusterbomb
-    payloads:
-      payload: "templates/dast/assets/5.2.1Payloads.txt"
-    matchers:
       - type: word
-        part: body
+        part: header
         words:
-          - "{{payload}}"    
-    body: |
-      {
-        "ops": [
-          { "insert": "{{payload}}" },
-          { "insert": "{{payload}}", "attributes": { "bold": "{{payload}}" } },
-          { "insert": "{{payload}}", "attributes": { "italic": "{{payload}}" } },
-          { "insert": "{{payload}}", "attributes": { "link": "{{payload}}" } }
-        ]
-      }
-# digest: 4b0a00483046022100a20be37f2680adcf6cf30f46a2f79aafdf0803c10b2ac628e4c62486dc3a02a3022100c7779a6e7e643411096a7e95856f07ed3b830671418285575851c6c317c2ee87:236a7c23afe836fbe231d6e037cff444
+          - "text/html"
