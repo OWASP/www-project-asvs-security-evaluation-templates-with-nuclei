@@ -15,8 +15,8 @@ info:
     Require Switch: -lfa (Load File Wordlist)
 
 http:
-  - raw: 
-    - |
+  - raw:
+      - |
       POST {{Path}} HTTP/1.1
       Host: {{Hostname}}
       Content-Type: application/json
@@ -46,4 +46,3 @@ http:
         part: body
         regex:
           - 'key="(?P<key>[^"]+)",value="(?:\\")?(?P<value>[^"\\]+)(?:\\")?"'
-# digest: 4b0a00483046022100fd41c66225894a7314506755d97be437ec01ea8e1c7952a0904186e4d70662490221008f5c63b5a84a58290322e733da2420f0bb9ab10265516b2fcdf20a5535727b47:236a7c23afe836fbe231d6e037cff444
