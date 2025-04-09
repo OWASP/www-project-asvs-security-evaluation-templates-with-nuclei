@@ -40,10 +40,14 @@ jobs:
           git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
 
       # Commit changes with GPG signing
-      - name: Commit changes
+      - name: Commit changes if any
         run: |
           git add README.md
-          git commit -S -m "Update README table"
+          if ! git diff --cached --quiet; then
+            git commit -S -m "Update README table"
+          else
+            echo "No changes to commit"
+          fi
 
       # Push changes
       - name: Push changes
