@@ -76,4 +76,4 @@ http:
         part: body
         regex:
           - '(?i)(?P<parameter>[a-zA-Z0-9_\[\]]+)=x(?:&|,).*?(?P<value>Polluted[^&\s]+)'
-# digest: 4a0a0047304502210089f315c1780f5615a5fb9dc6c3a8b6b41ab273b79354c00bb66de7fda40702ff0220448df16cba3f08f36fc25b4db50a8e92c61dd38fde84013df5d8cb6b90e6840d:236a7c23afe836fbe231d6e037cff444
+# digest: 490a00463044022016faa7842e806d5f433a9b301462b098f3c0ea1a7b802d4c0cd1960a2cd558e402207bf67d938f155a57fa6585da77e04ea1a452ee2438a3101da58ce50f691febc9:236a7c23afe836fbe231d6e037cff444
