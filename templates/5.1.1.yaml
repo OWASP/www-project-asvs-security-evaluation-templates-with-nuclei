@@ -35,7 +35,7 @@ http:
         status:
           - 200
           - 302
-    
+
     extractors:
       - type: regex
         part: body
@@ -54,7 +54,7 @@ http:
     payloads:
     # [Nuclei BUG]  Loading Combination of Payloads Failed, This Flow Has Been Disabled
       parameters: 'templates/dast/assets/5.1.1Parameters.txt'
-      
+
       body_variant:
         - '{{parameters}}=x&{{parameters}}=Polluted_1'
         - '{{parameters}}[]=x&{{parameters}}=Polluted_2'
@@ -70,7 +70,7 @@ http:
         status:
           - 200
           - 302
-    
+
     extractors:
       - type: regex
         part: body
