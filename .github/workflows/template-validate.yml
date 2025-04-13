@@ -2,6 +2,8 @@ name: 🛠 Template Validate
 
 on:
   push:
+    paths:
+      - '**.yaml'
   pull_request:
     paths:
       - '**.yaml'
@@ -26,5 +28,6 @@ jobs:
       - name: Template Validation
         run: |
           cp -r ${{ github.workspace }}/templates /home/runner/nuclei-templates
+          cd /home/runner/nuclei-templates
           nuclei -duc -validate -allow-local-file-access
           nuclei -duc -validate -allow-local-file-access -w /home/runner/nuclei-templates/workflows
