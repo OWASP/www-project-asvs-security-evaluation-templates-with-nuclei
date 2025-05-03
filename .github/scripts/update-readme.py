@@ -30,7 +30,7 @@ def update_vulnerable_status(template_status, vuln_dir):
 # Function to update README.md with a table (4 columns: Template Name, Vulnerable Page, Template Name, Vulnerable Page)
 def update_readme(template_status, root_dir):
     readme_file = 'README.md'
-    github_base_url = "https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/main/"
+    github_base_url = "https://github.com/OWASP/www-project-asvs-security-evaluation-templates-with-nuclei/blob/dev/"
     
     try:
         with open(readme_file, 'r', encoding='utf-8') as file:
