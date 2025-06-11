@@ -28,9 +28,9 @@ http:
         - "SELECT ... INTO OUTFILE '\\\\{{interactsh-url}}\a'-- -"
     fuzzing:
       - parts:
-        - query
-        - body
-        - header
+         - query
+         - body
+         - header
         type: postfix
         mode: single
         fuzz:
@@ -48,4 +48,3 @@ http:
         words:
           - "http"
           - "dns"
-# digest: 490a00463044022067e617d435339bd1342e777e2699cd6918d2b4607ef3ab9d0c1e8b7f9d12fec002205d8466493d3f7437844aa08c6a5b566e73ee3b300def84268d96f1e51dfd9469:236a7c23afe836fbe231d6e037cff444
