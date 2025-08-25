@@ -32,8 +32,7 @@ For detailed information and guidelines about contributing in developing templat
 The project current core team are:
 - [Hamed Salimian](https://github.com/Snbig)  (Project Leader)
 - [AmirHossein Raeisi](https://github.com/Ahsraeisi)  (Project Co-Leader)
-- [Masoud Abdaal](https://github.com/MasoudAbdaal)  (Contributor)
-- [AmirMohammad Ahmadi](https://github.com/)  (Contributor)
+
 <h2 align="center">Available Templates</h2>
 <table border="1" cellpadding="5" cellspacing="0" align="center">
 <tr><th>Template Name</th><th>Vulnerable Page</th><th>Template Name</th><th>Vulnerable Page</th></tr>
