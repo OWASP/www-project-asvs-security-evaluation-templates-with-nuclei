@@ -1,7 +1,7 @@
-id: ASVS-4-0-3-V12-6-1
-
+#id: ASVS-4-0-3-V12-6-1
+id: ASVS-5.0.0-13.2.5
 info:
-  name: ASVS 12.6.1 Check
+  name: ASVS 13.2.5 Check
   author: AmirHossein Raeisi
   severity: high
   classification:
@@ -12,9 +12,9 @@ info:
     - https://github.com/projectdiscovery/nuclei-templates/blob/main/dast/vulnerabilities/ssrf/blind-ssrf.yaml
     - https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html
     - https://snbig.github.io/Vulnerable-Pages/ASVS_12_6_1/
-  tags: asvs,12.6.1
+  tags: asvs,12.6.1,13.2.5
   description: |
-    Verify that the web or application server is configured with an allow list of resources or systems to which the server can send requests or load data/files from.
+    Verify that the web or application server is configured with an allowlist of resources or systems to which the server can send requests or load data or files from.
 
 http:
   - pre-condition:
@@ -56,4 +56,3 @@ http:
         words:
           - "http"
           - "dns"
-# digest: 4a0a00473045022100df54f16772e7070065be0f76b4a0729bd9aaceb11093982424ad29dd4d13056f022026b642707e4b17641c3029a8d20b0b9d968353e6f425e29980b535a77c3e06f7:236a7c23afe836fbe231d6e037cff444
